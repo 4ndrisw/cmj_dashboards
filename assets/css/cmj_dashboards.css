@@ -1,0 +1,36 @@
+tr.overdue {
+    background: #a00000;
+    font-size: small;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+#footer {
+    background: #192231;
+    line-height: 2;
+    text-align: center;
+    color: #042E64;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #84BAFF;
+}
+
+
+tr.has-row-options-2 a,
+tr.has-row-options-2,
+tr.schedule_status_2 {
+    background: #004803;
+}
+
+tr.has-row-options-1 a,
+tr.has-row-options-1,
+tr.schedule_status_1 {
+    background: #b7ab00;
+    color: #000;
+}
