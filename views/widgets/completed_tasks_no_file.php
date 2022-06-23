@@ -12,6 +12,7 @@ $this->db->join('tblfiles', 'tblfiles.rel_id = tbltasks.id', 'left');
 
 $this->db->where('tblprojects.status <','5');
 $this->db->where('tbltasks.status','5');
+$this->db->where('tblprojects.estimated_hours != ','1');
 $this->db->where('tblfiles.file_name', NULL);
 
 $query = $this->db->get();
