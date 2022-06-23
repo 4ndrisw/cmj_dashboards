@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php
 
-$query = $this->db->query("SELECT `projects`.`id`,`projects`.`name` FROM `tblprojects` AS `projects` LEFT JOIN `tbltasks` AS `tasks` ON `projects`.`id` = `tasks`.`rel_id` AND `tasks`.`rel_id` is NOT NULL WHERE `tasks`.`rel_id` IS NULL AND `projects`.`status` < 5 GROUP BY `projects`.`id` LIMIT 5");
+$query = $this->db->query("SELECT `projects`.`id`,`projects`.`name` FROM `tblprojects` AS `projects` LEFT JOIN `tbltasks` AS `tasks` ON `projects`.`id` = `tasks`.`rel_id` AND `tasks`.`rel_id` is NOT NULL WHERE `tasks`.`rel_id` IS NULL AND `projects`.`status` < 5 AND `projects`.`estimated_hours` != '1' GROUP BY `projects`.`id` LIMIT 5");
 $this->db->limit(0,10);
 
 $widget_data = $query->result();
