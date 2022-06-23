@@ -28,7 +28,7 @@ $widget_data = $query->result();
         <div class="row mtop5">
           <hr class="hr-panel-heading-dashboard">
         </div>
-        <table id="widget-<?php echo create_widget_id(); ?>" class="table dt-table" data-order-col="3" data-order-type="desc">
+        <table id="widget-<?php echo create_widget_id(); ?>" class="table dt-table" data-order-col="3" data-order-type="asc">
           <thead>
             <th class="company"><?= _l('company') ?></th>
             <th class="project_name"><?= _l('project_name') ?></th>
