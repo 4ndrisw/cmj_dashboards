@@ -34,10 +34,11 @@ $widget_data = $query->result();
           <hr class="hr-panel-heading-dashboard">
         </div>
         <div class="table-responsive">
-          <table class="table dataTable no-footer dtr-inline">
+        <table id="widget-<?php echo create_widget_id(); ?>" class="table dt-table" data-order-col="1" data-order-type="desc">
             <thead>
                 <th>No</th>
                 <th>Task Name</th>
+                <th>Project Name</th>
             </thead>
             <tbody>
               <?php $i=1;?>
@@ -46,6 +47,7 @@ $widget_data = $query->result();
                   <tr>
                       <td><?= $i ?>
                       <td><a href="<?= admin_url('tasks/view/' . $widget_row->id) ?>"><?= $widget_row->name ?></a></td>
+                      <td><a href="<?= admin_url('projects/view/' . $widget_row->project_id) ?>"><?= $widget_row->project_name ?></a></td>
                   </tr>
                   <?php $i++; ?>
                 <?php } ?>
