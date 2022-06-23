@@ -10,9 +10,7 @@ $compiled_select = $this->db->get_compiled_select();
 ?>
 
 
-<div class="widget<?php if(count($query->result()) == 0 ){echo ' hide';} ?>" id="widget-<?php echo create_widget_id('staff_with_statuses'); ?>">
-
-
+<div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('staff_with_statuses'); ?>">
   <div class="">
     <div class="panel_s">
       <div class="panel-body">
@@ -23,7 +21,7 @@ $compiled_select = $this->db->get_compiled_select();
         <div class="row mtop5">
           <hr class="hr-panel-heading-dashboard">
         </div>
-        <table class="table dataTable no-footer dtr-inline">
+        <table id="widget-<?php echo create_widget_id(); ?>" class="table dt-table dt-inline dataTable no-footer" data-order-col="3" data-order-type="desc">
           <thead>
             <th><?= _l('staff') ?></th>
             <th><?= _l('task_status_1') ?></th>

@@ -17,8 +17,7 @@ $widget_data = $query->result();
 ?>
 
 
-<div class="widget<?php if(count($tasks) == 0){echo ' hide';} ?>" id="widget-<?php echo create_widget_id('clients_task_recapitulation'); ?>">
-
+<div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('clients_task_recapitulation'); ?>">
   <div class="">
     <div class="panel_s">
       <div class="panel-body">

@@ -54,14 +54,9 @@ function cmj_dashboards_add_dashboard_widget($widgets)
         'path'      => 'cmj_dashboards/widgets/staff_with_statuses',
         'container' => 'left-8',
     ];
-    
     $widgets[] = [
         'path'      => 'cmj_dashboards/widgets/tasks_not_assigned',
         'container' => 'right-4',
-    ];
-    $widgets[] = [
-        'path'      => 'cmj_dashboards/widgets/completed_tasks_no_file',
-        'container' => 'left-8',
     ];
 
     $widgets[] = [
@@ -73,6 +68,16 @@ function cmj_dashboards_add_dashboard_widget($widgets)
         'path'      => 'cmj_dashboards/widgets/clients_task_recapitulation',
         'container' => 'left-8',
     ];
+
+    $widgets[] = [
+        'path'      => 'cmj_dashboards/widgets/completed_tasks_no_file',
+        'container' => 'left-8',
+    ];
+    
+    /*
+
+
+    */
 
     return $widgets;
 }

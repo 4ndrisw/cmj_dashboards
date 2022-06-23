@@ -17,13 +17,14 @@ $this->db->where('tblfiles.file_name', NULL);
 
 $query = $this->db->get();
 $widget_data = $query->result();
+if(count($widget_data) == 0){
+  return;
+}
 
 ?>
 
 
-<div class="widget<?php if(count($query->result()) == 0 ){echo ' hide';} ?>" id="widget-<?php echo create_widget_id('completed_tasks_no_file'); ?>">
-
-
+<div class="widget" id="widget-<?php echo create_widget_id(); ?>" data-name="<?php echo _l('completed_tasks_no_file'); ?>">
   <div class="">
     <div class="panel_s">
       <div class="panel-body">

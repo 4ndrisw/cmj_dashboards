@@ -8,3 +8,4 @@ $lang['uncompletesd_tasks_for']                                         = 'Tasks
 $lang['no_tasks_listed']                                                = 'Tidak ada tugas yang terdaftar';
 $lang['tasks_not_assigned']                                             = 'Tugas belum didelegasikan';
 $lang['projects_have_no_tasks']                                         = 'Projects tidak memiliki tugas';
+$lang['staff_with_statuses']                                                 = 'Staf dengan informasi status';
