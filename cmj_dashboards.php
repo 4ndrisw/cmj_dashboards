@@ -65,6 +65,11 @@ function cmj_dashboards_add_dashboard_widget($widgets)
     ];
 
     $widgets[] = [
+        'path'      => 'cmj_dashboards/widgets/last_active',
+        'container' => 'right-4',
+    ];
+
+    $widgets[] = [
         'path'      => 'cmj_dashboards/widgets/clients_task_recapitulation',
         'container' => 'left-8',
     ];

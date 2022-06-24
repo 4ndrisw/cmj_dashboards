@@ -30,4 +30,14 @@ class Cmj_dashboards_model extends App_Model
 	return $query->result();
     }
 
+    public function get_last_active(){
+        $this->db->select([db_prefix() . 'staff.staffid', db_prefix() . 'staff.firstname', db_prefix() . 'staff.lastname', db_prefix() . 'staff.last_login', db_prefix() . 'staff.last_activity']);
+        $this->db->where('last_login IS NOT NULL');
+        $this->db->where('last_activity IS NOT NULL');
+
+        //return $this->db->get_compiled_select(db_prefix() . 'staff');
+
+        return $this->db->get(db_prefix() . 'staff')->result_array();
+    }
+
 }
