@@ -6,7 +6,7 @@ $this->db->select(array('tblstaff.firstname','tblstaff.lastname'));
 $this->db->select(array('tbltasks.id','tbltasks.name'));
 $this->db->select(array('tblfiles.file_name'));
 
-$this->db->limit(10,0)->from('tblprojects'); 
+$this->db->from('tblprojects'); 
 
 $this->db->join('tbltasks', 'tbltasks.rel_id = tblprojects.id', 'left');
 $this->db->join('tbltask_assigned', 'tbltask_assigned.taskid = tbltasks.id', 'left');
