@@ -2,17 +2,20 @@
 <?php
 
 $this->db->select(array('tblprojects.id AS project_id','tblprojects.name AS project_name'));
+$this->db->select(array('tblstaff.firstname','tblstaff.lastname'));
 $this->db->select(array('tbltasks.id','tbltasks.name'));
 $this->db->select(array('tblfiles.file_name'));
 
 $this->db->limit(10,0)->from('tblprojects'); 
 
 $this->db->join('tbltasks', 'tbltasks.rel_id = tblprojects.id', 'left');
+$this->db->join('tbltask_assigned', 'tbltask_assigned.taskid = tbltasks.id', 'left');
 $this->db->join('tblfiles', 'tblfiles.rel_id = tbltasks.id', 'left');
+$this->db->join('tblstaff', 'tbltask_assigned.staffid = tblstaff.staffid', 'left');
 
 $this->db->where('tblprojects.status <','5');
 $this->db->where('tbltasks.status','5');
-$this->db->where('tblprojects.estimated_hours != ','1');
+$this->db->where('tblprojects.estimated_hours', NULL);
 $this->db->where('tblfiles.file_name', NULL);
 
 $query = $this->db->get();
@@ -40,6 +43,7 @@ if(count($widget_data) == 0){
             <thead>
                 <th>No</th>
                 <th>Task Name</th>
+                <th>staff</th>
                 <th>Project Name</th>
             </thead>
             <tbody>
@@ -49,6 +53,7 @@ if(count($widget_data) == 0){
                   <tr>
                       <td><?= $i ?>
                       <td><a href="<?= admin_url('tasks/view/' . $widget_row->id) ?>"><?= $widget_row->name ?></a></td>
+                      <td><?= $widget_row->firstname .' '. $widget_row->lastname ?></td>
                       <td><a href="<?= admin_url('projects/view/' . $widget_row->project_id) ?>"><?= $widget_row->project_name ?></a></td>
                   </tr>
                   <?php $i++; ?>
