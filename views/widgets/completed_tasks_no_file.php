@@ -13,7 +13,7 @@ $this->db->join('tbltask_assigned', 'tbltask_assigned.taskid = tbltasks.id', 'le
 $this->db->join('tblfiles', 'tblfiles.rel_id = tbltasks.id', 'left');
 $this->db->join('tblstaff', 'tbltask_assigned.staffid = tblstaff.staffid', 'left');
 
-$this->db->where('tblprojects.status <','5');
+$this->db->where('tblprojects.status =','4');
 $this->db->where('tbltasks.status','5');
 $this->db->where('tblprojects.estimated_hours', NULL);
 $this->db->where('tblfiles.file_name', NULL);
