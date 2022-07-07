@@ -63,6 +63,11 @@ function cmj_dashboards_add_dashboard_widget($widgets)
         'path'      => 'cmj_dashboards/widgets/projects_have_no_tasks',
         'container' => 'right-4',
     ];
+    
+    $widgets[] = [
+        'path'      => 'cmj_dashboards/widgets/project_tasks_no_tags',
+        'container' => 'right-4',
+    ];
 
     $widgets[] = [
         'path'      => 'cmj_dashboards/widgets/last_active',
